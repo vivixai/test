@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
+        with:
+          limit-access-to-actor: true
+
+      - name: Wait 1 hour
+        run: sleep 3600
